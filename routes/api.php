@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Route;
 // })->middleware('auth:sanctum');
 
 Route::apiResource('products', ProductController::class);
+
 Route::get('/product',[ProductController::class,'index'])->name('product.index');
 Route::post('/products', [ProductController::class, 'store'])->name('product.store');
 Route::put('/Products', [ProductController::class, 'update'])->name('product.update');
+Route::delete('/Products/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
